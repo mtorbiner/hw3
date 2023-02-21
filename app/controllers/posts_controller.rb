@@ -1,6 +1,6 @@
-class PlacesController < ApplicationController
+class PostsController < ApplicationController
     def index
-        @places = Place.all
+        @posts = Post.all
     end
 
     def show
@@ -21,6 +21,5 @@ class PlacesController < ApplicationController
         redirect_to "/places"
 
     end
-
 
 end
