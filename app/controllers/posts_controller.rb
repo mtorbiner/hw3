@@ -1,24 +1,30 @@
 class PostsController < ApplicationController
     def index
         @posts = Post.all
+        
     end
 
-    def show
-        @place = Place.find_by({ "id" => params["id"]})
-    end
+   
+
 
 
     def new
-        @place = Place.new
+        @post = Post.new
+        
     end
 
     def create
-        @place = Place.new
-        @place["name"] = params["place"]["name"]
-        @place["created_at"] = params["place"]["created_at"]
-        @place["updated_at"] = params["place"]["created_at"]
-        @place.save
+        @post = Post.new
+        @post["title"] = params["post"]["title"]
+        @post["description"] = params["post"]["description"]
+        @post["posted_on"] = params["post"]["posted_on"]
+        
+        @post["place_id"] = params["pid"]
+        
+        
+        @post.save
         redirect_to "/places"
+        
 
     end
 

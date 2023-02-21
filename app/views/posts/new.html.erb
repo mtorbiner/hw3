@@ -11,10 +11,17 @@
     </p>
 
 
+    
     <p>
-        <%= form.label "created_at", "Time of Visit"%>
-        <%= form.text_field "created_at"%>
+        <%= form.label "posted_on", "Posted on"%>
+        <%= form.date_field "posted_on"%>
     </p>
+
+    
+
     <%= form.submit %>
 <% end %>
 
+<p>
+    <a href="/places">Back to all places</a>
+</p>

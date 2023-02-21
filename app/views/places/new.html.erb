@@ -1,3 +1,6 @@
+<h1> Please enter the information of a new place you visited </h1>
+
+
 <%= form_with :model => @place do |form| %>
 
     <p>
@@ -9,10 +12,12 @@
 
     <p>
         <%= form.label "created_at", "Time of First Visit"%>
-        <%= form.text_field "created_at"%>
+        <%= form.text_field "datetime"%>
     </p>
     <%= form.submit %>
 <% end %>
 
 
-
+<p>
+    <a href="/places">Back</a>
+</p>

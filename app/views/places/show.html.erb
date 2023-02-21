@@ -1,11 +1,27 @@
 <h1> <%= @place["name"]%> </h1>
 
-<p>
-    First visit: <%= @place["created_at"]%>
-</p>
+
+
+
+
+
+<ul>
+    <% for x in @posts%>
+        <% if x["place_id"] == @place["id"]%>
+            <li> 
+                <h2> <%= x["title"] %> </h2>
+                <p> <%= x["description"]%> </p>
+                <p> <%= x["posted_at"]%> </p> 
+            
+            </li>
+        <%end%>
+    <% end %>
+    <li> hello </li>
+    <li> world </li>
+</ul>
 
 <p>
-    Last visit: <%= @place["updated_at"]%>
+    <a href="/posts/new?pid=<%=@place["id"]%>">Create a new Post</a>
 </p>
 
 <p>
